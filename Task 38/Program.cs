@@ -1,8 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿/* Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+[3.22, 4.2, 1.15, 77.15, 65.2] => 77.15 - 1.15 = 76 */
 
 Console.Clear();
-int[] GetRandomArray(int arrayLength1, int start, int end)
+double[] GetRandomArray(int arrayLength1, int start, int end)
 {
     int[] array = new int[arrayLength1];
     for (int i = 0; i < array.Length; i++)

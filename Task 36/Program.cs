@@ -5,9 +5,9 @@
 
 
 Console.Clear();
-int[] GetRandomArray(int arrayLength1, int start, int end)
+int[] GetRandomArray(int arrayLength, int start, int end)
 {
-    int[] array = new int[arrayLength1];
+    int[] array = new int[arrayLength];
     for (int i = 0; i < array.Length; i++)
     {
         array [i] = new Random().Next(start, end);
@@ -34,6 +34,17 @@ int arrayL = Convert.ToInt32(Console.ReadLine());
 int min = Convert.ToInt32(Console.ReadLine());
 int max = Convert.ToInt32(Console.ReadLine());
 
+int SumOfOddIndexes(int[] array)
+{
+    int count = 0;
+    for (int i = 1; i < array.Length; i = i + 2)
+    {
+        count += array[i];
+    }
+    return count;
+}
+
 int[] userArray = GetRandomArray(arrayL, min, max);
 PrintArray(userArray);
 System.Console.WriteLine();
+System.Console.WriteLine($"sum of the odd positions is {SumOfOddIndexes(userArray)}");

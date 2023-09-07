@@ -3,9 +3,9 @@
 [345, 897, 568, 234] -> 2 */
 
 Console.Clear();
-int[] GetRandomArray(int arrayLength1, int start, int end)
+int[] GetRandomArray(int arrayLength, int start, int end)
 {
-    int[] array = new int[arrayLength1];
+    int[] array = new int[arrayLength];
     for (int i = 0; i < array.Length; i++)
     {
         array [i] = new Random().Next(start, end);
@@ -32,6 +32,17 @@ int arrayL = Convert.ToInt32(Console.ReadLine());
 int min = Convert.ToInt32(Console.ReadLine());
 int max = Convert.ToInt32(Console.ReadLine());
 
-int[] userArray = GetRandomArray(arrayL, min, max);
+int EvenNumbers(int[] array)
+{
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] % 2 == 0) count++;
+    }
+    return count;
+}
+
+int[] userArray = GetRandomArray(arrayL, min, max); // min = 100, max = 999
 PrintArray(userArray);
 System.Console.WriteLine();
+System.Console.WriteLine($"{EvenNumbers(userArray)} even numbers in the array");
